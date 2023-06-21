@@ -89,16 +89,3 @@ l16: 	ADRP	X1, myoctaword@PAGE
 	LDP	X2, X3, [X1]
 	STP	X2, X3, [X1]
 
-// Setup the parameters to exit the program
-// and then call the kernel to do it.
-	mov     X0, #0		// Use 0 return code
-	mov     X16, #1		// System call number 1 terminates this program
-	svc     #0x80		// Call kernel to terminate the program
-helloworld2:	.ascii "Hello World!"
-
-.data
-helloworld:	.ascii "Hello World!"
-.align 4
-mynumber:	.quad	0x123456789ABCDEF0
-arr1:	.fill	10, 4, 0
-myoctaword:	.octa 0x12345678876543211234567887654321
