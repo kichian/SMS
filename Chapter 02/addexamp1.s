@@ -1,4 +1,3 @@
-//
 // Examples of the ADD/MOVN instructions.
 //
 .global _start	            // Provide program starting address to linker
