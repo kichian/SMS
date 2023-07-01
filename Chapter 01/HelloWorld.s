@@ -1,4 +1,4 @@
-//
+
 // Assembler program to print "Hello World!"
 // to stdout.
 //
