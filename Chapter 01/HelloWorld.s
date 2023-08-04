@@ -7,7 +7,7 @@
 //
 .global _start			// Provide program starting address to linker
 .align 2			// Make sure everything is aligned properly
-
+#
 // Setup the parameters to print hello world
 // and then call the Kernel to do it.
 _start: mov	X0, #1		// 1 = StdOut
