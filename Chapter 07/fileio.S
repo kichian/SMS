@@ -5,7 +5,6 @@
 // Return code is in X0.
 
 #include <sys/syscall.h>
-
 .equ	O_RDONLY, 0
 .equ	O_WRONLY, 1
 .equ	O_CREAT,  0x00000200
