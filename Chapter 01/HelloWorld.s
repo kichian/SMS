@@ -15,7 +15,7 @@ _start: mov	X0, #1		// 1 = StdOut
 	mov	X2, #13	    	// length of our string
 	mov	X16, #4		// Unix write system call
 	svc	#0x80		// Call kernel to output the string
-
+//
 // Setup the parameters to exit the program
 // and then call the kernel to do it.
 	mov     X0, #0		// Use 0 return code
