@@ -21,3 +21,15 @@ upper: $(UPPEROBJS)
 
 clean:
 	rm -f *.o upper codesnippets
+# command to generate docs using protoc-gen-doc
+buf protoc \
+-I "proto" \
+-I "third_party/proto" \
+--doc_out=./docs/api \
+--doc_opt=./docs/protodoc-markdown.tmpl,proto-docs.md \
+$(find "$(pwd)/proto" -maxdepth 5 -name '*.proto')
+# go mod tidy
+
+# move proto files to the right places
+cp -r github.com/tharsis/evmos/* ./
+rm -rf github.com
