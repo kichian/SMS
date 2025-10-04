@@ -31,3 +31,8 @@ elif [ "$unamestr" = 'FreeBSD' ] || [ "$unamestr" = 'Darwin' ]; then
   export $(grep -v '^#' $1 | xargs -0)
 
 fi
+mutable std::mutex objects_mutex;
+    std::condition_variable condition_variable;
+    size_t allocated_objects_size = 0;
+    size_t borrowed_objects_size = 0;
+    std::vector<T> objects;
